@@ -1,0 +1,26 @@
+/****---- best products----****/
+
+.categories-list-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.categories-list-item:hover {
+    color: #007bff;
+}
+
+.categories-list-item:last-of-type {
+    padding-right: 0 !important;
+}
+
+@media (min-width: 768px) {
+    .categories-list-item:hover:after {
+        content: '';
+        position: absolute;
+        top: -1em;
+        left: -0.5em;
+        width: 100%;
+        height: 1px;
+        background: #007bff;
+    }
+}

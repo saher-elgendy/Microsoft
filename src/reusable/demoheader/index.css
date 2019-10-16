@@ -1,0 +1,22 @@
+.header-logo {
+    width: 150px;
+}
+
+.user-panel-item {
+    cursor: pointer;
+}
+@media (max-width: 992px) {
+    .navbar {
+        width: 100% !important;
+        flex-wrap: wrap !important;
+    }
+    .user-panel {
+      flex-grow: 1 !important;
+    }
+    .user-panel-items {
+        justify-content: space-between;
+        width: 50%;
+        margin: auto;
+    }
+
+}

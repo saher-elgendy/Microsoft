@@ -1,0 +1,45 @@
+.header-logo {
+    width: 150px;
+}
+
+.nav-link {
+    padding: 0.5em; 
+    margin-right: 3em;
+    position: relative;
+}
+
+.user-panel-item {
+    cursor: pointer;
+    position: relative;
+}
+
+.user-panel-item span {
+    position: absolute;
+    top: -0.5rem;
+}
+
+@media (min-width: 1200px) {
+    .nav-link:hover:before{
+        content: '';
+        position: absolute;
+        top: -1.1em;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #629cdb;
+   }
+}
+@media (max-width: 1200px) {
+   .user-panel {
+       width: 100%;
+   }
+
+   .user-panel-container {
+       width: 50%;
+       margin: auto;
+   }
+
+   .navbar-nav a {
+       max-width: 20%;
+   }
+}
