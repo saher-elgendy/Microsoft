@@ -1,8 +1,9 @@
 import React from 'react';
-import Header from './../../reusable/header/index';
-import Intro from '../../reusable/intro';
 import Contacts from '../../reusable/contacts';
+import Intro from '../../reusable/intro';
 import Footer from './../../reusable/footer/index';
+import AllProducts from './allProducts/index';
+import Header from './../../reusable/demoheader/index';
 
 
 const Products = () => {
@@ -10,6 +11,7 @@ const Products = () => {
         <>
             <Header />
             <Intro />
+            <AllProducts />
             <Contacts />
             <Footer />
         </>
