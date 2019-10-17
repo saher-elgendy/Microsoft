@@ -1,19 +1,23 @@
 import React from 'react';
 import { Col } from 'react-bootstrap';
-import List from '../list';
 
 
 const ServicesCol = (props) => {
     const { items } = props;
+    
     return (
         <Col className="mt-4">
-            <List
-                classes={{
-                    list: 'd-flex flex-column',
-                    listItem: ''
-                }}
-                items={items}
-            />
+            <ul>
+                {
+                    items.map((i, index) => {
+                        return (
+                            <li key="index" >
+                                <a href="#">{i}</a>
+                            </li>
+                        );
+                    })
+                }
+            </ul>
         </Col>
     );
 }

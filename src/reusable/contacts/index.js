@@ -70,7 +70,7 @@ const Contacts = () => {
                     {
                         services.map((col, index) => {
                             return (
-                                <ServicesCol ley={index} items={col}/>
+                                <ServicesCol key={index} items={col}/>
                             );
                         })
                     }
