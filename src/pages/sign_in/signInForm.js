@@ -5,9 +5,9 @@ import SignFormMessage from '../../reusable/sign_form/signFormMessage';
 
 const SignInForm = () => {
     return (
-        <section className="section sign-in-section py-sm-0 py-4">
-            <Container className="py-5">
-                <Row>
+        <section className="section sign-in-section py-sm-0 py-4 bg-primary">
+            <Container className="py-5 bg-white">
+                <Row >
                     <Col xl={8}>
                         <Form>
 
