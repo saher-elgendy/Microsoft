@@ -16,7 +16,7 @@ const Filters = (props) => {
                                 <Input
                                     classes={{
                                         formControl: 'filter-checkbox d-none',
-                                        label: 'filter-label px-3 font-weight-md',
+                                        label: 'filter-label px-md-4 px-3 font-weight-md',
                                     }}
                                     controlId={`${filter}-filter-checkbox`}
                                     type="checkbox"

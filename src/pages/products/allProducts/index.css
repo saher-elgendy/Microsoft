@@ -1,25 +1,33 @@
 .filter-label {
-    width: 100px;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     transition: background-color 0.1s linear;
-    border: 1px solid #000000;
-    position: relative;
     margin-bottom: 0;
+    position: relative;
 }
 
-
-.filter-label:hover {
-    background: blueviolet;
-    color: #fff;
-    border: none;
+.filter-label:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
 }
+
 
 .filter-checkbox:checked~.filter-label {
     background: #5b05ab;
     color: #fff;
     border: none;
+}
+
+@media (min-width: 768px) {
+    .filter-label:hover {
+        background: blueviolet;
+        color: #fff;
+        border: none;
+    }
 }
