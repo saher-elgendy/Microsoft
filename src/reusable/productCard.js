@@ -8,10 +8,10 @@ const ProductCard = (props) => {
     return (
         <ReusableCard
             classes={{
-                card: 'text-center shadow',
+                card: 'product-card text-center shadow',
                 image: 'card-image',
-                cardBody: '',
-                title: '',
+                cardBody: 'flex-grow-1',
+                title: 'h5',
                 btn: 'w-100',
                 btnIcon: 'fas fa-shopping-cart mr-2'
             }}
@@ -22,7 +22,7 @@ const ProductCard = (props) => {
             btnText="Add To Card"
             onBtnClick=""
         >
-            <Price 
+            <Price
                 classes={{
                     originalPrice: 'font-weight-md',
                     newPrice: 'font-size-xl font-weight-md text-primary'
@@ -35,3 +35,4 @@ const ProductCard = (props) => {
 }
 
 export default ProductCard;
+

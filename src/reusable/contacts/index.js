@@ -36,7 +36,9 @@ const Contacts = () => {
                                 append: ''
                             }}
                             controlId="subscribe-email"
-                            label="email"
+                            name="email"
+                            type="email"
+                            label="email address"
                             labelFor="subscribe-email"
                             prepend="@"
                             placeholder="Enter Your Email"

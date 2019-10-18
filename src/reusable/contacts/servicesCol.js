@@ -11,7 +11,7 @@ const ServicesCol = (props) => {
                 {
                     items.map((i, index) => {
                         return (
-                            <li key="index" >
+                            <li key={index} >
                                 <a href="#">{i}</a>
                             </li>
                         );
