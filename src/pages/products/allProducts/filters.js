@@ -11,7 +11,7 @@ const Filters = (props) => {
             <List
                 classes={{
                     list: 'd-flex',
-                    listItem: 'text-white filter-item mr-4'
+                    listItem: 'text-white filter-item mr-4 bg-primary font-weight-md px-3'
                 }}
                 items={filters}
             />

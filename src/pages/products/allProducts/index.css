@@ -1,9 +1,12 @@
 .filter-item {
-    width: 90px;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background: #aa07c8;
+    transition: background-color 0.1s linear;
+}
+
+.filter-item:hover {
+    background: blue !important;
 }
