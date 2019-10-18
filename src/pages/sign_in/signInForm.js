@@ -1,5 +1,6 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Form, Row } from 'react-bootstrap';
+import SignFormMessage from '../../reusable/sign_form/signFormMessage';
 
 
 const SignInForm = () => {
@@ -8,10 +9,17 @@ const SignInForm = () => {
             <Container className="py-5">
                 <Row>
                     <Col xl={8}>
+                        <Form>
 
+
+                        </Form>
                     </Col>
 
                     <Col xl={4}>
+                        <SignFormMessage 
+                            messageText="Don't have an account ?"
+                            messageLink="Sign Up"
+                        />
                     </Col>
                 </Row>
             </Container>
