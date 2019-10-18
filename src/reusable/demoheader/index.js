@@ -31,7 +31,7 @@ const Header = () => {
         },
         {
             title: 'Sign in',
-            to: '/Sign_in'
+            to: '/sign_in'
         }
 
     ];

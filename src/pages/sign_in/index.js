@@ -1,17 +1,17 @@
 import React from 'react';
 import Contacts from '../../reusable/contacts';
 import Intro from '../../reusable/intro';
-import Footer from './../../reusable/footer/index';
-import Home from './../home/index';
-import SignIn from './index';
-
+import Header from './../../reusable/demoheader';
+import Footer from './../../reusable/footer';
+import SignInForm from './signInForm';
 
 
 const SignIn = () => {
     return (
        <>
-        <Home />
+        <Header />
         <Intro />
+        <SignInForm />
         <Contacts />
         <Footer />
        </>
