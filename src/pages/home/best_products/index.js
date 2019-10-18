@@ -9,7 +9,7 @@ const BestProducts = (props) => {
     const { productCategories, products } = props;
 
     return (
-        <section className="section best-products-section mt-4 border-bottom">
+        <section className="section best-products-section border-bottom bg-light">
             <Container className="px-5 py-4">
                 <Row className="flex-lg-row flex-column">
                     <Col>

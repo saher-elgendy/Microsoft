@@ -6,7 +6,7 @@ import PanoramaContent from './panoramaContent';
 
 const Panorama = () => {
     return (
-        <section className="section panorama-section position-relative overflow-hidden">
+        <section className="section panorama-section position-relative overflow-hidden bg-light">
             <h2 className="sr-only">panorama section</h2>
             <img src={images.panoramaBadge} alt="360-badge" className="panorama-view360-badge"/>
 

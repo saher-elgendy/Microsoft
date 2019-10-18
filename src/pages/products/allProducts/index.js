@@ -47,7 +47,7 @@ const AllProducts = () => {
         },
     ];
 
-    const filters = ['Laptop', 'iPad', 'iPhone', 'Accessories'];
+    const filters = ['Mac', 'iPhone', 'iPad', 'Accessories', 'Laptop'];
     const sortBy = ['none', 'low to high price', 'high to low price'];
 
     return (

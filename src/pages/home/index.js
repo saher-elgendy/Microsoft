@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Contacts from '../../reusable/contacts';
 import images from './../../images';
 // import Header from '../../reusable/Header';
 import Header from './../../reusable/demoheader/index';
@@ -12,7 +13,6 @@ import BestSale from './best_sale/index';
 import Categories from './categories/index';
 import './index.css';
 import Panorama from './panorama/index';
-import Contacts from '../../reusable/contacts';
 
 
 
@@ -23,38 +23,38 @@ const Home = () => {
         {
             title: 'Surface Laptop',
             image: images.laptop,
-            newPrice: '2500',
-            originalPrice: '3500',
+            newPrice: '$2500',
+            originalPrice: '$3500',
         },
         {
             title: 'Surface Laptop',
             image: images.laptop,
-            newPrice: '2500',
-            originalPrice: '3500',
+            newPrice: '$2500',
+            originalPrice: '$3500',
         },
         {
             title: 'Surface Laptop',
             image: images.mobile,
-            newPrice: '2500',
-            originalPrice: '3500',
+            newPrice: '$2500',
+            originalPrice: '$3500',
         },
         {
             title: 'Surface Laptop',
             image: images.laptop,
-            newPrice: '2500',
-            originalPrice: '3500',
+            newPrice: '$2500',
+            originalPrice: '$3500',
         },
         {
             title: 'Surface Laptop',
             image: images.laptop,
-            newPrice: '2500',
-            originalPrice: '3500',
+            newPrice: '$2500',
+            originalPrice: '$3500',
         },
         {
             title: 'Surface Laptop',
             image: images.laptop,
-            newPrice: '2500',
-            originalPrice: '3500',
+            newPrice: '$2500',
+            originalPrice: '$3500',
         },
     ];
 

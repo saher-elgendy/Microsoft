@@ -13,7 +13,6 @@ const SignIn = () => {
         <Home />
         <Intro />
         <Contacts />
-        <SignIn />
         <Footer />
        </>
     );

@@ -5,8 +5,10 @@ const Input = ({ classes, ...props }) => {
 
     return (
         <InputGroup className={classes.inputGroup}>
-            <InputGroup.Prepend className={classes.prepend}>{props.prepend}</InputGroup.Prepend>
-
+            {
+                props.prepend ? <InputGroup.Prepend className={classes.prepend}>{props.prepend}</InputGroup.Prepend> : ''
+            }
+         
             <Form.Control
                 as={props.as}
                 className={classes.formControl}
@@ -18,8 +20,11 @@ const Input = ({ classes, ...props }) => {
             >
                 {props.children}
             </Form.Control>
-            <label className={classes.label} htmlFor={props.labelFor}> {props.label}</label>
-            <InputGroup.Append className={classes.append}>{props.append}</InputGroup.Append>
+            <label className={classes.label} htmlFor={props.labelFor}>{props.label}</label>
+            {
+                props.append ? <InputGroup.Append className={classes.append}>{props.append}</InputGroup.Append> : ''
+            }
+            
         </InputGroup>
     );
 }

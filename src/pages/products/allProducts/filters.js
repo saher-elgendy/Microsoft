@@ -1,5 +1,5 @@
 import React from 'react';
-import List from '../../../reusable/list';
+import Input from '../../../reusable/input';
 
 
 const Filters = (props) => {
@@ -8,13 +8,28 @@ const Filters = (props) => {
     return (
         <div className="filters d-flex flex-column align-items-md-start align-items-center">
             <p className="font-weight-bold">filter proucts by:</p>
-            <List
-                classes={{
-                    list: 'd-flex',
-                    listItem: 'text-white filter-item mr-4 bg-primary font-weight-md px-3'
-                }}
-                items={filters}
-            />
+            <ul className="filters-list d-flex flex-grw-1">
+                {
+                    filters.map((filter, index) => {
+                        return (
+                            <li key={index} className="filter-item">
+                                <Input
+                                    classes={{
+                                        formControl: 'filter-checkbox d-none',
+                                        label: 'filter-label px-3 font-weight-md',
+                                    }}
+                                    controlId={`${filter}-filter-checkbox`}
+                                    type="checkbox"
+                                    name="flter_checkbox"
+                                    label={filter}
+                                    labelFor={`${filter}-filter-checkbox`}
+                                />
+                            </li>
+                        );
+                    })
+                }
+            </ul>
+
         </div>
     );
 }

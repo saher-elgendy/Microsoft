@@ -1,10 +1,10 @@
-import React from 'react'
-import { Container } from 'react-bootstrap'
-
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import './index.css';
 import Navigation from './navbar';
 import UserPanel from './userPanel';
 
-import './index.css'
+
 
 
 const Header = () => {
@@ -43,7 +43,7 @@ const Header = () => {
     ]
 
     return (
-        <header className="header border-bottom">
+        <header className="header border-bottom bg-light">
             <Container className="flex-row align-items-center justify-content-between flex-wrap ">
                 <Navigation navItems={navItems} />
                 <UserPanel userPanelItems={userPanelItems} />

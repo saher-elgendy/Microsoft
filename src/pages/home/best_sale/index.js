@@ -6,7 +6,7 @@ import './index.css';
 
 const BestSale = () => {
     return (
-        <section className="section best-sale-section border-bottom">
+        <section className="section best-sale-section border-bottom bg-light">
             <Container className="py-5">
                 <Row className="mx-0 flex-md-row flex-column">
                     <Col className="d-flex flex-column align-items-start pl-0">
