@@ -2,29 +2,31 @@ import React from 'react';
 import { Form, InputGroup } from 'react-bootstrap';
 
 const Input = ({ classes, ...props }) => {
-
+    const { prepend, as, type, name, onChange, placeholder, controlId, required, children, label, labelFor, append } = props;
+    
     return (
         <InputGroup className={classes.inputGroup}>
             {
-                props.prepend ? <InputGroup.Prepend className={classes.prepend}>{props.prepend}</InputGroup.Prepend> : ''
+              prepend ? <InputGroup.Prepend className={classes.prepend}>{prepend}</InputGroup.Prepend> : ''         
             }
-         
+
             <Form.Control
-                as={props.as}
+                as={as}
                 className={classes.formControl}
-                type={props.type}
-                name={props.name}
-                onChange={props.onChange}
-                placeholder={props.placeholder}
-                id={props.controlId}
+                type={type}
+                name={name}
+                onChange={onChange}
+                placeholder={placeholder}
+                id={controlId}
+                required={required}
             >
-                {props.children}
+                {children}
             </Form.Control>
-            <label className={classes.label} htmlFor={props.labelFor}>{props.label}</label>
+            <label className={classes.label} htmlFor={labelFor}>{label}</label>
             {
-                props.append ? <InputGroup.Append className={classes.append}>{props.append}</InputGroup.Append> : ''
+                append ? <InputGroup.Append className={classes.append}>{append}</InputGroup.Append> : ''     
             }
-            
+
         </InputGroup>
     );
 }
@@ -37,9 +39,9 @@ the component implementation in parent:
 
 <Input
     classes={{
+        formControl: '',
         label: '',
         prepend: '',
-        formControl: '',
         append: ''
     }}
     controlId=""

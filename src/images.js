@@ -15,7 +15,6 @@ import visualStudio from './static/visual_studio.png';
 import windows from './static/windows.png';
 
 
-
 const images =  {
     logo,
     bestSale,

@@ -3,7 +3,7 @@ import Contacts from '../../reusable/contacts';
 import Intro from '../../reusable/intro';
 import Header from './../../reusable/demoheader';
 import Footer from './../../reusable/footer';
-import SignInForm from './signInForm';
+import SignInSection from './signInSection';
 
 
 const SignIn = () => {
@@ -11,7 +11,7 @@ const SignIn = () => {
        <>
         <Header />
         <Intro />
-        <SignInForm />
+        <SignInSection />
         <Contacts />
         <Footer />
        </>

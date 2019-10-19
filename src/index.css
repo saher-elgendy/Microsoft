@@ -123,6 +123,11 @@ ul {
   border-radius: 0.25rem !important;
 }
 
+.btn:active, .btn:focus, .btn:hover {
+  outline: none !important;
+  box-shadow: none;
+  border-color: inherit !important
+}
 
 /**** forms *****/
 .form-control {
