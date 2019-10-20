@@ -79,12 +79,12 @@ const SignUpFormBody = () => {
     ]
 
     return (
-        <Form className="sign-up-form d-flex flex-md-row flex-column flex-wrap mt-4">
+        <Form className="sign-up-form d-flex flex-md-row flex-column align-items-center flex-wrap mt-4">
             <Row>
                 {
                     formFields.map((f, index) => {
                         return (
-                             <Col key={index} md={6} className="mt-4">
+                             <Col key={index} md={6} lg={5} xl={6}className="mt-4">
                                 <SignFormGroup 
                                     classes={f.classes}
                                     controlId={f.controlId}
@@ -103,7 +103,7 @@ const SignUpFormBody = () => {
             </Row>
             <ReusableButton
                 classes={{
-                    btn: 'form-btn bg-success mt-5 mx-md-0 mx-auto border-0'
+                    btn: 'form-btn bg-success mt-5 border-0 font-weigh-md'
                 }}
                 to="#"
                 type="submit"

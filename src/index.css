@@ -126,7 +126,6 @@ ul {
 .btn:active, .btn:focus, .btn:hover {
   outline: none !important;
   box-shadow: none;
-  border-color: inherit !important
 }
 
 /**** forms *****/

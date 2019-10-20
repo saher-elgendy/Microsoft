@@ -81,7 +81,7 @@ const SignInFormBody = () => {
 
             <ReusableButton
                 classes={{
-                    btn: 'form-btn bg-success border-0 mt-5'
+                    btn: 'form-btn bg-success border-0 mt-5 font-weight-md'
                 }}
                 to="#"
                 type="submit"
