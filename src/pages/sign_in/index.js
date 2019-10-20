@@ -3,7 +3,7 @@ import Contacts from '../../reusable/contacts';
 import Intro from '../../reusable/intro';
 import Header from './../../reusable/demoheader';
 import Footer from './../../reusable/footer';
-import SignInSection from './signInSection';
+import SignInSection from './sign_in_section';
 
 
 const SignIn = () => {

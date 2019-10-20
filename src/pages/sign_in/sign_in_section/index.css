@@ -6,15 +6,16 @@
 
 
 /* remember me custom checkbox style*/
-.remember-checkbox {
+.form-checkbox {
     position: relative;
 }
 
-.remember-checkbox-label {
+.form-checkbox-label {
     margin-top: 1.5em;
     margin-left: 2.2rem;
 }
-.remember-checkbox-label:before {
+
+.form-checkbox-label:before {
     content: '';
     position: absolute;
     left: 0;
@@ -25,30 +26,39 @@
     transition: box-shadow 0.2s linear;
 }
 
-.remember-checkbox:checked ~ .remember-checkbox-label:before {
+.form-checkbox:checked ~ .form-checkbox-label:before {
     box-shadow: 0px 0px 5px 5px #92d5eb;
     border: none;
-    background:  url('./../../static/green_dot.png');
+    background:  url('./../../../static/green_dot.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 13px;
-
 }
 
+.checkbox-prepend {
+    display: none !important;
+}
 
 /* form links style */
 .form-link{
     color: #5f850c;
     text-decoration: underline;
     font-size: 1.1em;
+    margin: 1em auto
 }
 
 .form-link:hover {
     color: #99bf44;
 }
 
+@media (min-width: 768px) {
+    .form-link {
+        margin: auto 1em 0;
+    }
+}
 
-/* from buttons style */
+
+/* form buttons style */
 .form-btn {
     width: 250px;
 }

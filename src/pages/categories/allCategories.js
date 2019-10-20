@@ -15,7 +15,6 @@ const AllCategories = (props) => {
                         );
                     })
                 }
-
             </Container>
         </section>
     );

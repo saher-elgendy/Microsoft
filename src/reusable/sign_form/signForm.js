@@ -7,7 +7,7 @@ const SignForm = ({ classes, ...props }) => {
 
     return (
         <div className="sign-form d-flex flex-column align-items-start">
-            <h4>{props.title}</h4>
+            <h3>{props.title}</h3>
 
             {props.children}
 
@@ -15,7 +15,7 @@ const SignForm = ({ classes, ...props }) => {
 
             <ReusableButton
                 classes={{
-                    btn: classes.btnTwo,
+                    btn: `d-flex flex-row-reverse mt-2 px-3 border-0 mx-lg-0 mx-auto font-weight-md ${classes.btnTwo}`,
                     icon: 'fab fa-facebook-f ml-2 bg-white text-primary p-1'
                 }}
                 to={btnTwoTo}

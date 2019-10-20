@@ -1,9 +1,10 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import SignForm from '../../reusable/sign_form/signForm';
-import SignFormMessage from '../../reusable/sign_form/signFormMessage';
+import SignForm from './../../../reusable/sign_form/signForm';
+import SignFormMessage from './../../../reusable/sign_form/signFormMessage';
 import './index.css';
 import SignInFormBody from './SignInFormBody';
+
 
 
 const SignInSection = () => {
@@ -15,7 +16,7 @@ const SignInSection = () => {
                         <Col  lg={8}>
                             <SignForm
                                 classes={{
-                                    btnTwo: 'form-btn d-flex flex-row-reverse mt-2 px-3 border-0 mx-lg-0 mx-auto'
+                                    btnTwo: 'form-btn'
                                 }}
                                 btnTwoTo="#"
                                 btnTwoLabel="sign in with facebook"

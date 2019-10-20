@@ -1,59 +1,65 @@
 import React from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
-import ReusableButton from './../../reusable/button';
-import SignFormGroup from './../../reusable/sign_form/signFormGroup';
+import ReusableButton from './../../../reusable/button';
+import SignFormGroup from './../../../reusable/sign_form/signFormGroup';
 
 
 
 const SignInFormBody = () => {
-
+    
     const formFields = [
         {
             classes: {
                 fomtControl: 'sign-in-control',
                 label: 'd-none',
-                prepend: 'fas fa-user d-flex justify-content-center align-items-center '
+                prepend: 'fas fa-user'
             },
             controlId: 'sign-in-email',
             type: 'email',
             name: 'sign_in_email',
             label: 'email',
-            placeholder: 'Enter Your Email'
+            labelFor: 'sign-in-email',
+            placeholder: 'Enter Your Email',
+            required: true
 
         },
         {
             classes: {
                 fomtControl: 'sign-in-control',
                 label: 'd-none',
-                prepend: 'fas fa-key d-flex justify-content-center align-items-center '
+                prepend: 'fas fa-key'
             },
             controlId: 'sign-in-password',
             type: 'password',
             name: 'sign_in_password',
             label: 'password',
-            placeholder: 'Enter Your Password'
+            labelFor: 'sign-in-password',
+            placeholder: 'Enter Your Password',
+            required: true
 
         },
         {
             classes: {
-                formControl: 'remember-checkbox d-none',
-                label: 'remember-checkbox-label font-size-md mb-0',
-                prepend: 'd-none'
+                formControl: 'form-checkbox remember-checkbox d-none',
+                label: 'form-checkbox-label remember-checkbox-label d-block font-size-md mb-0 mt-5',
+                prepend: 'checkbox-prepend'
             },
-            controlId: 'remember-checkbox',
+            controlId: 'form-checkbox',
             type: 'checkbox',
             name: 'remember_checkbox',
             label: 'Remember Me',
+            labelFor: 'form-checkbox',
+            required: true
         },
     ];
 
     return (
-        <Form className="d-flex flex-md-row flex-column flex-wrap flex-grow-1 mt-4 align-items-center">
-            <Row >
+        <Form className="sign-in-form d-flex flex-wrap mt-4">
+            <Row>
                 {
                     formFields.map((f, index) => {
                         return (
-                            <Col md={6}>
+                            <Col md={6} className="mt-md-0 mt-4">
                                 <SignFormGroup
                                     key={index}
                                     classes={f.classes}
@@ -69,14 +75,13 @@ const SignInFormBody = () => {
                         );
                     })
                 }
-                <div className="d-flex align-items-center justify-content-md-end justify-content-center flex-grow-1 px-3">
-                    <a href="#" className="form-link">Forgot Your Password</a>
-                </div>
+
+                <a href="#" className="form-link mr-md-3 mx-auto mt-md-auto mt-4">Forgot Your Password</a>
             </Row>
 
             <ReusableButton
                 classes={{
-                    btn: 'form-btn bg-success mt-5 border-0'
+                    btn: 'form-btn bg-success mt-5 mx-lg-0 mx-auto border-0'
                 }}
                 to="#"
                 type="submit"
@@ -89,20 +94,3 @@ const SignInFormBody = () => {
 
 export default SignInFormBody;
 
-
-{/* <FormGroup>
-            <Input
-                classes={{
-                    formControl: classes.formControl,
-                    label: classes.label,
-                    prepend: classes.prepend,
-                }}
-                controlId={controlId}
-                type={type}
-                name={name}
-                label={label}
-                labelFor={labelFor}
-                prepend={prepend}
-                placeholder={placeholder}
-            />
-        </FormGroup> */}
