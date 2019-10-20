@@ -103,7 +103,7 @@ const SignUpFormBody = () => {
             </Row>
             <ReusableButton
                 classes={{
-                    btn: 'form-btn bg-success mt-4 mx-lg-0 mx-auto border-0'
+                    btn: 'form-btn bg-success mt-5 mx-md-0 mx-auto border-0'
                 }}
                 to="#"
                 type="submit"

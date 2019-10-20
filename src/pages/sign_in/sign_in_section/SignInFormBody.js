@@ -54,7 +54,7 @@ const SignInFormBody = () => {
     ];
 
     return (
-        <Form className="sign-in-form d-flex flex-wrap mt-4">
+        <Form className="sign-in-form d-flex flex-md-row flex-column align-items-center flex-wrap mt-4">
             <Row>
                 {
                     formFields.map((f, index) => {
@@ -76,12 +76,12 @@ const SignInFormBody = () => {
                     })
                 }
 
-                <a href="#" className="form-link mr-md-3 mx-auto mt-md-auto mt-4">Forgot Your Password</a>
+                <a href="#" className="form-link ml-md-auto">Forgot Your Password</a>
             </Row>
 
             <ReusableButton
                 classes={{
-                    btn: 'form-btn bg-success mt-5 mx-lg-0 mx-auto border-0'
+                    btn: 'form-btn bg-success border-0 mt-5'
                 }}
                 to="#"
                 type="submit"

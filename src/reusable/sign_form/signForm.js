@@ -11,11 +11,11 @@ const SignForm = ({ classes, ...props }) => {
 
             {props.children}
 
-            <p className="font-size-bg font-weight-bold my-2 mx-lg-0 mx-auto">or</p>
+            <p className="font-size-bg font-weight-bold my-2 mx-md-0 mx-auto">or</p>
 
             <ReusableButton
                 classes={{
-                    btn: `d-flex flex-row-reverse mt-2 px-3 border-0 mx-lg-0 mx-auto font-weight-md ${classes.btnTwo}`,
+                    btn: `d-flex flex-row-reverse mt-2 px-3 border-0 mx-md-0 mx-auto font-weight-md ${classes.btnTwo}`,
                     icon: 'fab fa-facebook-f ml-2 bg-white text-primary p-1'
                 }}
                 to={btnTwoTo}
