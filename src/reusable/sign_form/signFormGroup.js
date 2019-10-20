@@ -13,7 +13,7 @@ const SignFormGroup = ({classes, ...props}) => {
                 classes={{
                     formControl: `sign-control border-left-0 px-2 ${classes.formControl}`,
                     label: `${classes.label}`,
-                    prepend: `${classes.prepend} px-3`,
+                    prepend: `px-3 ${classes.prepend}`,
                 }}
                 controlId={controlId}
                 type={type}

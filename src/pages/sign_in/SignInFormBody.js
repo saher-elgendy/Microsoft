@@ -12,7 +12,7 @@ const SignInFormBody = () => {
             classes: {
                 fomtControl: 'sign-in-control',
                 label: 'd-none',
-                prepend: 'fas fa-user d-flex justify-content-center align-items-center'
+                prepend: 'fas fa-user d-flex justify-content-center align-items-center '
             },
             controlId: 'sign-in-email',
             type: 'email',
@@ -25,7 +25,7 @@ const SignInFormBody = () => {
             classes: {
                 fomtControl: 'sign-in-control',
                 label: 'd-none',
-                prepend: 'fas fa-key d-flex justify-content-center align-items-center'
+                prepend: 'fas fa-key d-flex justify-content-center align-items-center '
             },
             controlId: 'sign-in-password',
             type: 'password',

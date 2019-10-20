@@ -5,6 +5,7 @@ import Categories from './pages/categories';
 import Home from './pages/home/index';
 import Products from './pages/products/index';
 import SignIn from './pages/sign_in';
+import SignUp from './pages/sign_up';
 
 
 
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/categories" component={Categories}/>
           <Route path="/products" component={Products} />
           <Route path="/sign_in" component={SignIn} />
+          <Route path="/sign_up" component={SignUp} />
         </>
       </Switch>
     </Router>

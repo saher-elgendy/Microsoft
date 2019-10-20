@@ -14,10 +14,10 @@ const Navigation = (props) => {
                 <Nav className="ml-auto">
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/products">Products</Nav.Link>
-                    <Nav.Link href="categories">Catgeories</Nav.Link>
-                    <Nav.Link href="week_product">Product</Nav.Link>
-                    <Nav.Link href="sign_in">Sign In</Nav.Link>
-                    <Nav.Link href="sign_up">Sign Up</Nav.Link>
+                    <Nav.Link href="/categories">Catgeories</Nav.Link>
+                    <Nav.Link href="/week_product">Product</Nav.Link>
+                    <Nav.Link href="/sign_in">Sign In</Nav.Link>
+                    <Nav.Link href="/sign_up">Sign Up</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

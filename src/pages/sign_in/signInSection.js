@@ -29,7 +29,8 @@ const SignInSection = () => {
                         <Col lg={4}>
                             <SignFormMessage
                                 messageText="Don't have an account ?"
-                                messageLink="Sign Up"
+                                to="/sign_up"
+                                linkText="Sign Up"
                             />
                         </Col>
                     </Row>
