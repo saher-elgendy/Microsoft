@@ -3,8 +3,8 @@ import { Col, Container, Row } from 'react-bootstrap';
 import images from './../../../images';
 import './index.css';
 import ProductBox from './productBox';
-import ProductDetails from './productDetails';
 import ProductDescription from './productDescription';
+import ProductDetails from './productDetails';
 
 const ProductOfTheWeek = () => {
     return (
