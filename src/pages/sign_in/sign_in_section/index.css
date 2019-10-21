@@ -29,10 +29,10 @@
 .form-checkbox:checked ~ .form-checkbox-label:before {
     box-shadow: 0px 0px 5px 5px #92d5eb;
     border: none;
-    background:  url('./../../../static/green_dot.png');
+    background:  url('./../../../static/correct.svg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 13px;
+    background-size: 200%;
 }
 
 .checkbox-prepend {
