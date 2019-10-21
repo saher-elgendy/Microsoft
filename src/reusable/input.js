@@ -39,6 +39,7 @@ the component implementation in parent:
 
 <Input
     classes={{
+        inputGroup: ''
         formControl: '',
         label: '',
         prepend: '',

@@ -25,7 +25,7 @@ const Contacts = () => {
     return (
         <section className="section contact-section border-bottom bg-light py-sm-0 py-4">
             <Container className="py-5">
-                <p className="font-size-md font-weight-md">join to our new settler</p>
+                <p className="font-size-md font-weight-md">join to our newsletter</p>
                 <Row >
                     <Col lg={9}>
                         <Input

@@ -1,25 +1,19 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 /***** basic style *****/
@@ -47,7 +41,7 @@ ul {
 }
 
 .border-bottom {
-  border-bottom: 1px solid #eee; 
+  border-bottom: 1px solid #eee;
 }
 
 .container {
@@ -55,6 +49,7 @@ ul {
 }
 
 /***** basic fonts *****/
+
 .font-size-xs {
   font-size: 0.8em;
 }
@@ -96,9 +91,11 @@ ul {
 }
 
 /*** backgrounds ***/
+
 .bg-none {
   background: #fff;
 }
+
 .bg-red {
   background: red;
 }
@@ -114,11 +111,13 @@ ul {
 .bg-blue {
   background: blue;
 }
+
 .bg-black {
   background: #000000
 }
 
 /*** basic btn style ***/
+
 .btn {
   border-radius: 0.25rem !important;
 }
@@ -129,6 +128,7 @@ ul {
 }
 
 /**** forms *****/
+
 .form-control {
   border-radius: 4px !important;
 }
@@ -139,10 +139,11 @@ ul {
 
 .input-group-prepend {
   border: 1px solid #d3d3d3 !important;
-  border-radius: 4px 0px 0px 4px; 
+  border-radius: 4px 0px 0px 4px;
 }
 
 /* minimizing all containers padding for small screens */
+
 @media (max-width: 500px) {
   .container {
     padding: 0.5em!important;

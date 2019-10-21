@@ -9,6 +9,7 @@ import mouse from './static/mouse.png';
 import panorama from './static/panorama.png';
 import shield from './static/shield.png';
 import surfaceLaptop from './static/surface_laptop.png';
+import surfaceLaptop2 from './static/surface_laptop2.png';
 import tablet1 from './static/tablet1.png';
 import tablet2 from './static/tablet2.png';
 import visualStudio from './static/visual_studio.png';
@@ -29,6 +30,7 @@ const images =  {
     mobile3,
     shield,
     surfaceLaptop,
+    surfaceLaptop2,
     windows,
     visualStudio
 }
