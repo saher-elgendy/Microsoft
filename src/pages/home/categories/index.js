@@ -9,6 +9,7 @@ import FeatureItem from './featureItem';
 
 
 const Categories = (props) => {
+    
     const { categoriesSlides } = props;
 
     const features = [

@@ -1,51 +1,12 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import ProductCard from '../../../reusable/productCard';
-import images from './../../../images';
 import Filters from './filters';
 import './index.css';
 import SortBy from './sortBy';
 
 
-const AllProducts = () => {
-    const products = [
-        {
-            title: 'Surface Laptop',
-            image: images.laptop,
-            newPrice: '2500',
-            originalPrice: '3500',
-        },
-        {
-            title: 'Surface Laptop',
-            image: images.laptop,
-            newPrice: '2500',
-            originalPrice: '3500',
-        },
-        {
-            title: 'Surface Laptop',
-            image: images.mobile,
-            newPrice: '2500',
-            originalPrice: '3500',
-        },
-        {
-            title: 'Surface Laptop',
-            image: images.laptop,
-            newPrice: '2500',
-            originalPrice: '3500',
-        },
-        {
-            title: 'Surface Laptop',
-            image: images.laptop,
-            newPrice: '2500',
-            originalPrice: '3500',
-        },
-        {
-            title: 'Surface Laptop',
-            image: images.laptop,
-            newPrice: '2500',
-            originalPrice: '3500',
-        },
-    ];
+const AllProducts = (props) => {
 
     const filters = ['Mac', 'iPhone', 'iPad', 'Accessories', 'Laptop'];
     const sortBy = ['none', 'low to high price', 'high to low price'];
@@ -59,7 +20,7 @@ const AllProducts = () => {
                 </div>
                 <Row className="flex-wrap mt-5 justify-content-center">
                     {
-                        products.map((p, index) => {
+                        props.products.map((p, index) => {
                             return (
                                 <Col key={index} xl={3} lg={4} sm={6} className="mt-4">
                                     <ProductCard product={p}/>

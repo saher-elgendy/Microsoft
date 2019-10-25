@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import Contacts from '../../reusable/contacts';
 import images from './../../images';
-// import Header from '../../reusable/Header';
 import Header from './../../reusable/demoheader/index';
 import Footer from './../../reusable/footer/index';
 import Intro from './../../reusable/intro/index';
@@ -17,48 +16,11 @@ import Panorama from './panorama/index';
 
 
 const Home = (props) => {
+    
     const { products } = props;
     const productCategories = ['Mac', 'iPhone', 'iPad', 'Accessories', 'Laptops', 'All'];
 
-    // const products = [
-    //     {
-    //         title: 'Surface Laptop',
-    //         image: images.laptop,
-    //         newPrice: '$2500',
-    //         originalPrice: '$3500',
-    //     },
-    //     {
-    //         title: 'Surface Laptop',
-    //         image: images.laptop,
-    //         newPrice: '$2500',
-    //         originalPrice: '$3500',
-    //     },
-    //     {
-    //         title: 'Surface Laptop',
-    //         image: images.mobile,
-    //         newPrice: '$2500',
-    //         originalPrice: '$3500',
-    //     },
-    //     {
-    //         title: 'Surface Laptop',
-    //         image: images.laptop,
-    //         newPrice: '$2500',
-    //         originalPrice: '$3500',
-    //     },
-    //     {
-    //         title: 'Surface Laptop',
-    //         image: images.laptop,
-    //         newPrice: '$2500',
-    //         originalPrice: '$3500',
-    //     },
-    //     {
-    //         title: 'Surface Laptop',
-    //         image: images.laptop,
-    //         newPrice: '$2500',
-    //         originalPrice: '$3500',
-    //     },
-    // ];
-
+   
     const categories = [
         {
             title: 'Laptops',
@@ -134,8 +96,6 @@ const Home = (props) => {
         },
     ];
 
-
-
     const [itemsNum, changeItemsNum] = useState(1);
 
     ['load', 'resize'].forEach(e => {
@@ -166,4 +126,4 @@ const mapStateToProps = (state) => ({
     products: state.products
 })
 
-export default connect (mapStateToProps, undefined)(Home);
+export default connect (mapStateToProps)(Home);

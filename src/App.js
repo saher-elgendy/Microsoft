@@ -13,10 +13,16 @@ import { fetchProducts } from './redux/products/action';
 
 
 const App = (props) => {
-  const { loadProducts } = props
+  const { loadProducts, filters, sortBy } = props;
+
   useEffect(() => {
     loadProducts();
   });
+
+
+  useEffect(() => {
+    loadProducts(filters, sortBy)
+  }, [filters, sortBy])
 
   return (
     <Router>
