@@ -1,4 +1,4 @@
-/**
+/** 
  * that function set the number of items that createSlids functions uses to define the number
  * of elements for each carousel item in the carousel
  * 
@@ -8,15 +8,17 @@
  * @returns {number} number of carousel item columns
  */
 export const setItemsNum = (changeItemsNum) => {
-    if (window.innerWidth >= 1200) {
+    const innerWidth = window.innerWidth;
+
+    if (innerWidth >= 1200) {
         changeItemsNum(4);
     }
 
-    else if (window.innerWidth < 1200 && window.innerWidth >= 992) {
+    else if (innerWidth < 1200 && innerWidth >= 992) {
         changeItemsNum(3);
     }
 
-    else if (window.innerWidth < 992 && window.innerWidth >= 768) {
+    else if (innerWidth < 992 && innerWidth >= 768) {
         changeItemsNum(2);
     }
 
@@ -24,6 +26,7 @@ export const setItemsNum = (changeItemsNum) => {
         changeItemsNum(1);
     }
 }
+
 
 /**
  * carousel item can receive multiple elements(for bigger screens) or single element (small screen < 578px), 
@@ -40,12 +43,13 @@ export const setItemsNum = (changeItemsNum) => {
 export const createSlides = (data, itemsNum) => {
     let slides = [];
 
-    for(let i = 0; i < data.length; i = i + itemsNum) {
-        slides.push (data.slice(i , i + itemsNum));
+    for (let i = 0; i < data.length; i = i + itemsNum) {
+        slides.push(data.slice(i, i + itemsNum));
     }
 
     return slides;
 }
+
 
 /**
  * this function filter products according to filters chosen by the user
@@ -57,10 +61,28 @@ export const createSlides = (data, itemsNum) => {
  * @returns {array} the filtered products , if no filters chosen, the products are returned unchanged
  */
 export const filterProducts = (products, filters) => {
-    if (filters && filters.length > 0 && filters[0] !== 'All') {
-        //if the user didn't choose all categories, filter products according to the filter/filters chosen
-        products = filters.map(f => products.filter(p => p.category === f)).reduce((acc, cur) => [...acc, ...cur], []);
-    }
-    
-    return products;
+    //filter products according to the filter/filters chosen
+    return filters.map(f => products.filter(p => p.category === f)).reduce((acc, cur) => [...acc, ...cur], []);
+}
+
+
+/**
+ * this function sort products according to a sort query that can be  'low to high price' or 'high to low price' or 'none'
+ * 
+ * prices are strings with '$' sign preceding, they should be converted into numbers so that the sort process
+ * can be correctly done, the dollar sign should be removed  before comparison
+ * 
+ * @param {array} products
+ * 
+ * @param {string} sortBy
+ */
+export const sortProducts = (products, sortBy) => {
+    products.sort((a, b) => {
+        //converting prices strings into numbers and removing the dollar sign
+        const prev = Number(a.newPrice.slice(1));
+        const next = Number(b.newPrice.slice(1));
+
+        return sortBy === 'low to high price' ? (prev - next) : sortBy === 'high to low price' ?
+            (next - prev) : products;
+    });
 }
