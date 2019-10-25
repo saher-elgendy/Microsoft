@@ -1,0 +1,7 @@
+.category-row:nth-of-type(even) {
+    flex-direction: row-reverse !important;
+}
+
+.category-image {
+    height: 20rem;
+}

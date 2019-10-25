@@ -1,10 +1,11 @@
 .product-box {
-    max-width: 300px;
-    margin: auto;
+  max-width: 300px;
+  margin: auto;
 }
 
 /* specs list */
 .specs-list {
-    list-style: disc;
-    margin-left: 1em;
+  list-style: disc;
+  margin-left: 1em;
 }
+/*# sourceMappingURL=index.css.map */
