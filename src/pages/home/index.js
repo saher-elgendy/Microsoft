@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import Contacts from '../../reusable/contacts';
 import images from './../../images';
 // import Header from '../../reusable/Header';
@@ -15,48 +16,48 @@ import './index.css';
 import Panorama from './panorama/index';
 
 
-
-const Home = () => {
+const Home = (props) => {
+    const { products } = props;
     const productCategories = ['Mac', 'iPhone', 'iPad', 'Accessories', 'Laptops', 'All'];
 
-    const products = [
-        {
-            title: 'Surface Laptop',
-            image: images.laptop,
-            newPrice: '$2500',
-            originalPrice: '$3500',
-        },
-        {
-            title: 'Surface Laptop',
-            image: images.laptop,
-            newPrice: '$2500',
-            originalPrice: '$3500',
-        },
-        {
-            title: 'Surface Laptop',
-            image: images.mobile,
-            newPrice: '$2500',
-            originalPrice: '$3500',
-        },
-        {
-            title: 'Surface Laptop',
-            image: images.laptop,
-            newPrice: '$2500',
-            originalPrice: '$3500',
-        },
-        {
-            title: 'Surface Laptop',
-            image: images.laptop,
-            newPrice: '$2500',
-            originalPrice: '$3500',
-        },
-        {
-            title: 'Surface Laptop',
-            image: images.laptop,
-            newPrice: '$2500',
-            originalPrice: '$3500',
-        },
-    ];
+    // const products = [
+    //     {
+    //         title: 'Surface Laptop',
+    //         image: images.laptop,
+    //         newPrice: '$2500',
+    //         originalPrice: '$3500',
+    //     },
+    //     {
+    //         title: 'Surface Laptop',
+    //         image: images.laptop,
+    //         newPrice: '$2500',
+    //         originalPrice: '$3500',
+    //     },
+    //     {
+    //         title: 'Surface Laptop',
+    //         image: images.mobile,
+    //         newPrice: '$2500',
+    //         originalPrice: '$3500',
+    //     },
+    //     {
+    //         title: 'Surface Laptop',
+    //         image: images.laptop,
+    //         newPrice: '$2500',
+    //         originalPrice: '$3500',
+    //     },
+    //     {
+    //         title: 'Surface Laptop',
+    //         image: images.laptop,
+    //         newPrice: '$2500',
+    //         originalPrice: '$3500',
+    //     },
+    //     {
+    //         title: 'Surface Laptop',
+    //         image: images.laptop,
+    //         newPrice: '$2500',
+    //         originalPrice: '$3500',
+    //     },
+    // ];
 
     const categories = [
         {
@@ -149,15 +150,20 @@ const Home = () => {
             <Header />
             <Intro />
             <BestSale />
-            <Categories categoriesSlides={categoriesSlides}/>
+            <Categories categoriesSlides={categoriesSlides} />
             <Panorama />
-            <BestProducts productCategories={productCategories} products={products}/>
+            <BestProducts productCategories={productCategories} products={products} />
             <Ads />
-            <BestDeals productCategories={productCategories} productsSlides={productsSlides}/>
+            <BestDeals productCategories={productCategories} productsSlides={productsSlides} />
             <Contacts />
             <Footer />
         </>
     );
 }
 
-export default Home;
+
+const mapStateToProps = (state) => ({
+    products: state.products
+})
+
+export default connect (mapStateToProps, undefined)(Home);
