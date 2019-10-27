@@ -16,13 +16,10 @@ const App = (props) => {
   const { loadProducts, filters, sortBy } = props;
 
   useEffect(() => {
-    loadProducts();
-  });
-
-
-  useEffect(() => {
-    loadProducts(filters, sortBy)
-  }, [filters, sortBy])
+    const cancel = { current: false };
+    loadProducts(filters, sortBy, cancel);
+    return () => cancel.current = true
+  }, [loadProducts, filters, sortBy]);
 
   return (
     <Router>
@@ -41,16 +38,15 @@ const App = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-  products: state.products,
   filters: state.filters,
   sortBy: state.sortBy
 });
 
 
 const mapDispatchToProps = (dispatch) => ({
-  loadProducts: (filters, sortBy) => {
+  loadProducts: (filters, sortBy, cancel) => {
     fetch('https://api.myjson.com/bins/87fx5').then(res => res.json()).then(json => {
-      dispatch(fetchProducts(json.products, filters, sortBy));
+      cancel.current || dispatch(fetchProducts(json.products, filters, sortBy));
     }).catch(err => 'error fetching data');
   }
 });

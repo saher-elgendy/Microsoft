@@ -1,15 +1,21 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
+import { updateSortBy } from './../../../redux/sort/action';
 
 const SortBy = (props) => {
-    const { sortBy } = props;
-
+    const { sortByItems, updateSortBy } = props;
+    
     return (
         <div className="sort-by mt-md-0 mt-4">
             <p className="font-weight-bold">sort products by:</p>
-            <select name="sort_by_select" id="sort-by-select" className="p-1">
+            <select
+                name="sort_by_select"
+                id="sort-by-select"
+                className="p-1"
+                onChange={e => updateSortBy(e.target.value)}
+            >
                 {
-                    sortBy.map((s, index) => {
+                   sortByItems.map((s, index) => {
                         return (
                             <option key={index} value={s}>{s}</option>
                         );
@@ -20,4 +26,5 @@ const SortBy = (props) => {
     );
 }
 
-export default SortBy;
+
+export default connect(undefined, { updateSortBy })(SortBy);

@@ -3,16 +3,19 @@ import Input from '../../../reusable/input';
 
 
 const Filters = (props) => {
-    const { filters } = props;
+    const { filters, handleCheckboxToggle } = props;
 
     return (
         <div className="filters d-flex flex-column align-items-md-start align-items-center">
             <p className="font-weight-bold">filter proucts by:</p>
-            <ul className="filters-list d-flex flex-grw-1">
+            <ul className="filters-list d-flex">
                 {
                     filters.map((filter, index) => {
                         return (
-                            <li key={index} className="filter-item">
+                            <li
+                                key={index}
+                                className="filter-item"
+                            >
                                 <Input
                                     classes={{
                                         formControl: 'filter-checkbox d-none',
@@ -20,9 +23,10 @@ const Filters = (props) => {
                                     }}
                                     controlId={`${filter}-filter-checkbox`}
                                     type="checkbox"
-                                    name="flter_checkbox"
+                                    name="filter_checkbox"
                                     label={filter}
                                     labelFor={`${filter}-filter-checkbox`}
+                                    onChange={e => handleCheckboxToggle(e, filter)}
                                 />
                             </li>
                         );

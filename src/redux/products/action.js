@@ -3,12 +3,14 @@ import { FETCH_PRODUCTS } from './actionTypes';
 
 
 /**
- * @param {array} products 
+ * @param {array} allProducts 
  * @param {array} filters 
  * @param {string} sortBy 
  */
 
-export const fetchProducts = (products, filters, sortBy) => {
+export const fetchProducts = (allProducts, filters, sortBy) => {
+    let products = [...allProducts];
+
     if (filters && filters.length) {
         products = filterProducts(products, filters);
     }

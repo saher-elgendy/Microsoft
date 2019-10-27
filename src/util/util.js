@@ -79,8 +79,8 @@ export const filterProducts = (products, filters) => {
 export const sortProducts = (products, sortBy) => {
     products.sort((a, b) => {
         //converting prices strings into numbers and removing the dollar sign
-        const prev = Number(a.newPrice.slice(1));
-        const next = Number(b.newPrice.slice(1));
+        const prev = Number(a.newPrice.slice(0, -1));
+        const next = Number(b.newPrice.slice(0, -1));
 
         return sortBy === 'low to high price' ? (prev - next) : sortBy === 'high to low price' ?
             (next - prev) : products;
