@@ -6,47 +6,55 @@ import CarouselContext from './carouselContext';
 
 
 
-const CarouselItem = (props) => {
+const CarouselItem = ({classes, ...props}) => {
     const item = useContext(CarouselContext);
+    const { btnLabel, btnText } = props;
+    const { colClasses, cardClasses, titleClasses, btnClasses, btnIconClasses } = classes;
 
     return (
         <>
             {
                 item.map((col, index) => {
+                    const { xl, lg, md, bg, direction, image, title, newPrice, originalPrice } = col;
+
                     return (
                         <Col
+                            //a single carousel item columns can have equal widths or not
+                            //if columns width in a single carousel item  is not consistent, use the value
+                            //provided by the relevant objects, if consistent use the default values 3(xl), 4(lg), 6(md)
                             key={index}
-                            xl={col.xl ? col.xl : 3}
-                            lg={col.lg ? col.lg : 4}
-                            md={col.md ? col.md : 6}
-                            className={`${props.colClasses} flex-grow-1`}
+                            xl={xl ? xl : 3}
+                            lg={lg ? lg : 4}
+                            md={md ? md : 6}
+                            className={`${colClasses} flex-grow-1`}
                         >
                             <ReusableCard
                                 classes={{
-                                    card: `${props.cardClasses} ${col.bg ? `bg-${col.bg}` : ''} ${col.direction ? `flex-xl-${col.direction}` : ''} flex-column justify-content-end h-100`,
+                                    card: `${cardClasses} ${bg ? `bg-${bg}` : ''} ${direction ? `flex-xl-${direction}` : ''} flex-column justify-content-end h-100`,
                                     image: 'card-image',
                                     cardBody: 'flex-grow-0',
-                                    title: `${props.titleClasses}`,
-                                    btn: `${props.btnClasses}`,
-                                    btnIcon: props.btnIconClasses ? props.btnIconClasses : ''
+                                    title: `${titleClasses}`,
+                                    btn: `${btnClasses}`,
+                                    btnIcon: btnIconClasses ? btnIconClasses : ''
                                 }}
-                                image={col.image}
-                                alt={`${col.title}_image`}
-                                title={col.title}
-                                btnLabel={props.btnLabel}
-                                btnText={props.btnText}
+                                image={image}
+                                alt={`${title}_image`}
+                                title={title}
+                                btnLabel={btnLabel}
+                                btnText={btnText}
                             >
                                 {
+                                    // not always carousel cards are product cards
+                                    //this check adds the price if only the carousel show products cards
                                     col.newPrice ? <Price
                                         classes={{
                                             originalPrice: 'font-weight-md',
                                             newPrice: 'font-size-xl font-weight-bg text-primary'
                                         }}
-                                        newPrice={col.newPrice}
-                                        originalPrice={col.originalPrice}
+                                        newPrice={newPrice}
+                                        originalPrice={originalPrice}
                                     /> : ''
                                 }
-
                             </ReusableCard>
                         </Col>
                     );

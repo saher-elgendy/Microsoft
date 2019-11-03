@@ -24,10 +24,10 @@ const ProductCard = (props) => {
         >
             <Price
                 classes={{
-                    originalPrice: 'font-weight-md',
+                    originalPrice: 'font-weight-bold',
                     newPrice: 'font-size-xl font-weight-md text-primary'
                 }}
-                originalPrice={product.originalPrice}
+                originalPrice={product.oldPrice}
                 newPrice={product.newPrice}
             />
         </ReusableCard>
@@ -35,4 +35,3 @@ const ProductCard = (props) => {
 }
 
 export default ProductCard;
-

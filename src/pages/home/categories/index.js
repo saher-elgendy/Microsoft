@@ -9,7 +9,7 @@ import FeatureItem from './featureItem';
 
 
 const Categories = (props) => {
-    
+
     const { categoriesSlides } = props;
 
     const features = [
@@ -72,11 +72,13 @@ const Categories = (props) => {
                         }}
                         items={categoriesSlides}
                     >
-                        <CarouselItem 
-                            colClasses="category-carousel-item-col"
-                            cardClasses="category-card"
-                            titleClasses="font-size-xl font-weight-xl mb-4 text-white"
-                            btnClasses="text-dark bg-white border-0 font-weight-md px-3 text-nowrap"
+                        <CarouselItem
+                            classes={{
+                                colClasses: "category-carousel-item-col",
+                                cardClasses: "category-card",
+                                titleClasses: "font-size-xl font-weight-xl mb-4 text-white",
+                                btnClasses: "text-dark bg-white border-0 font-weight-md px-3 text-nowrap"
+                            }}
                             btnText="View Products"
                             btnLabel="view products"
                         />

@@ -4,16 +4,18 @@ import { CarouselProvider } from './carouselContext';
 
 
 const ReusableCarousel = ({classes, ...props}) => {
+    const { items, children } = props;
+    
     return (
         <Carousel className={classes.carousel}>
-            {props.items.map((item, index) => {
+            {items.map((item, index) => {
                 return (
                     <Carousel.Item key={index} className={classes.carouselItem}>
                         <Row className={classes.carouselItemRow}>
-                            {/* {React.cloneElement(props.children, { item })} */}
+                            {/* {React.cloneElement(children, { item })} */}
                             {
                               <CarouselProvider value={item}>
-                                  {props.children}
+                                  {children}
                               </CarouselProvider>
                             }
                         </Row>
