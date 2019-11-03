@@ -19,7 +19,7 @@ const ProductCard = (props) => {
             alt={`${product.title}_image`}
             title={product.title}
             btnLabel="add to Cart"
-            btnText="Add To Card"
+            btnText="Add To Cart"
             onBtnClick=""
         >
             <Price

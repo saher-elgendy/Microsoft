@@ -10,13 +10,13 @@ import { FETCH_PRODUCTS } from './actionTypes';
 
 export const fetchProducts = (allProducts, filters, sortBy) => {
     let products = [...allProducts];
-
+    
     if (filters && filters.length) {
-        products = filterProducts(products, filters);
+        products = filterProducts(allProducts, filters);
     }
 
     if (sortBy) {
-        sortProducts(products, sortBy);
+       sortProducts(products, sortBy);
     }
 
     return {

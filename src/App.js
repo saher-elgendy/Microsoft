@@ -16,9 +16,9 @@ const App = (props) => {
   const { loadProducts, filters, sortBy } = props;
 
   useEffect(() => {
-    const cancel = { current: false };
-    loadProducts(filters, sortBy, cancel);
-    return () => cancel.current = true
+    // const cancel = { current: false };
+    loadProducts(filters, sortBy);
+    // return () => cancel.current = true
   }, [loadProducts, filters, sortBy]);
 
   return (
@@ -44,12 +44,18 @@ const mapStateToProps = (state) => ({
 
 
 const mapDispatchToProps = (dispatch) => ({
-  loadProducts: (filters, sortBy, cancel) => {
-    fetch('https://api.myjson.com/bins/87fx5').then(res => res.json()).then(json => {
-      cancel.current || dispatch(fetchProducts(json.products, filters, sortBy));
-    }).catch(err => 'error fetching data');
+  loadProducts: async (filters, sortBy) => {
+    try {
+      const response = await fetch('https://api.myjson.com/bins/87fx5');
+      const json = await response.json();
+
+      dispatch(fetchProducts(json.products, filters, sortBy));
+    }
+    catch {
+      console.log('error fetching data');
+    }
+
   }
 });
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
