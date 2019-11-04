@@ -46,10 +46,13 @@ const BestDeals = (props) => {
                         items={productsSlides}
                     >
                         <CarouselItem
-                            cardClasses="best-deals-card text-center shadow"
-                            titleClasses="h5 font-weight-md mb-4"
-                            btnClasses=" font-weight-md px-3 text-nowrap w-100"
-                            btnIconClasses="fas fa-shopping-cart mr-2"
+                            classes={{
+                                cardClasses: "best-deals-card text-center shadow",
+                                titleClasses: "h5 font-weight-md mb-4",
+                                btnClasses: " font-weight-md px-3 text-nowrap w-100",
+                                btnIconClasses: "fas fa-shopping-cart mr-2"
+                            }}
+
                             btnText="Add To Cart"
                             btnLabel="add to cart"
                         />
