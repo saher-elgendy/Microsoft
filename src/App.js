@@ -54,7 +54,6 @@ const mapDispatchToProps = (dispatch) => ({
     catch {
       console.log('error fetching data');
     }
-
   }
 });
 
