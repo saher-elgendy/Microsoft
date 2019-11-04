@@ -3,7 +3,7 @@ import ReusableCard from './card';
 import Price from './price';
 
 const ProductCard = (props) => {
-    const { product } = props;
+    const { image, title, oldPrice, newPrice } = props.product;
 
     return (
         <ReusableCard
@@ -15,9 +15,9 @@ const ProductCard = (props) => {
                 btn: 'w-100',
                 btnIcon: 'fas fa-shopping-cart mr-2'
             }}
-            image={product.image}
-            alt={`${product.title}_image`}
-            title={product.title}
+            image={image}
+            alt={`${title}_image`}
+            title={title}
             btnLabel="add to Cart"
             btnText="Add To Cart"
             onBtnClick=""
@@ -27,8 +27,8 @@ const ProductCard = (props) => {
                     originalPrice: 'font-weight-bold',
                     newPrice: 'font-size-xl font-weight-md text-primary'
                 }}
-                originalPrice={product.oldPrice}
-                newPrice={product.newPrice}
+                originalPrice={oldPrice}
+                newPrice={newPrice}
             />
         </ReusableCard>
     );

@@ -6,14 +6,15 @@ import Input from '../input';
 
 const SignFormGroup = ({classes, ...props}) => {
     const { controlId, type, name, label, labelFor, placeholder, required} = props;
+    const { formControl, prepend } = classes;
 
     return (
         <FormGroup className="mb-0">
             <Input
                 classes={{
-                    formControl: `sign-control border-left-0 px-2 ${classes.formControl}`,
+                    formControl: `sign-control border-left-0 px-2 ${formControl}`,
                     label: `d-none ${classes.label}`,
-                    prepend: ` d-flex justify-content-center align-items-center px-3 bg-white ${classes.prepend}`,
+                    prepend: ` d-flex justify-content-center align-items-center px-3 bg-white ${prepend}`,
                 }}
                 controlId={controlId}
                 type={type}

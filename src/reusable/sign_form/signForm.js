@@ -3,13 +3,13 @@ import ReusableButton from '../button';
 
 
 const SignForm = ({ classes, ...props }) => {
-    const { btnTwoTo, btnTwoLabel, btnTwoText } = props;
+    const { title, children, btnTwoTo, btnTwoLabel, btnTwoText } = props;
 
     return (
         <div className="sign-form d-flex flex-column align-items-start">
-            <h3>{props.title}</h3>
+            <h3>{title}</h3>
 
-            {props.children}
+            {children}
 
             <p className="font-size-bg font-weight-bold my-2 mx-md-0 mx-auto">or</p>
 

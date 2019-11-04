@@ -1,10 +1,11 @@
 import React from 'react';
 
 const SectionTitle = ({ classes, ...props }) => {
+    const { title, text } = props;
     return (
         <div className={`section-title d-flex flex-column ${classes.container}`}>
-            <h2 className={classes.title}>{props.title}</h2>
-            <p className={classes.text}>{props.text}</p>
+            <h2 className={classes.title}>{title}</h2>
+            <p className={classes.text}>{text}</p>
         </div>
     );
 }

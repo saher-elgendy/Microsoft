@@ -2,22 +2,22 @@ import React from 'react';
 import { Dropdown } from 'react-bootstrap';
 
 const ReusableDropdown = ({classes, ...props}) => {
-    console.log(props)
+   const { togglerAs, togglerId, variant, togglerText, menuAs, children } = props;
     return(
         <Dropdown>
             <Dropdown.Toggle 
-                as={props.togglerAs}
-                id={props.togglerId} 
-                variant={props.variant} 
+                as={togglerAs}
+                id={togglerId} 
+                variant={variant} 
                 className={`dropdown-toggler ${classes.toggler}`}
             >
-                {props.togglerText}
+                {togglerText}
             </Dropdown.Toggle>
             <Dropdown.Menu 
-                as={props.menuAs}
+                as={menuAs}
                 className={`dropdown-menu ${classes.menu}`}
             >
-                {props.children}
+                {children}
             </Dropdown.Menu>
         </Dropdown>
     );

@@ -2,13 +2,14 @@ import React from 'react';
 
 
 const Price = ({ classes, ...props }) => {
+    const { originalPrice, newPrice } = props;
     return (
         <p >
             <s className={classes.originalPrice}>
-                {props.originalPrice}
+                {originalPrice}
             </s>&nbsp;
             <span className={classes.newPrice}>
-                {props.newPrice}
+                {newPrice}
             </span>
         </p>
     );
