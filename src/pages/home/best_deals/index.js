@@ -1,14 +1,18 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { connect } from 'react-redux';
 import List from '../../../reusable/list';
 import SectionTitle from '../../../reusable/sectionTitle';
+import { updateCart } from './../../../redux/cart/action';
 import ReusableCarousel from './../../../reusable/carousel/carousel';
 import CarouselItem from './../../../reusable/carousel/carouselItem';
 
 
 
 const BestDeals = (props) => {
-    const { productCategories, productsSlides } = props;
+    const { productCategories, productsSlides, updateCart, cartProducts } = props;
+
+    console.log(cartProducts)
 
     return (
         <section className="section best-deals-section border-bottom">
@@ -52,16 +56,20 @@ const BestDeals = (props) => {
                                 btnClasses: " font-weight-md px-3 text-nowrap w-100",
                                 btnIconClasses: "fas fa-shopping-cart mr-2"
                             }}
-
                             btnText="Add To Cart"
                             btnLabel="add to cart"
+                            onBtnClick={() => updateCart(cartProducts, {quantity: 1, id: 2})}
                         />
                     </ReusableCarousel>
                 </Row>
-
             </Container>
         </section >
     );
 }
 
-export default BestDeals;
+const mapStateToProps = (state) => ({
+    cartproducts: state.cartProducts
+});
+
+
+export default connect(mapStateToProps, { updateCart })(BestDeals);

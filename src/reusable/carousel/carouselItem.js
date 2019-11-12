@@ -8,7 +8,7 @@ import CarouselContext from './carouselContext';
 
 const CarouselItem = ({classes, ...props}) => {
     const item = useContext(CarouselContext);
-    const { btnLabel, btnText } = props;
+    const { btnLabel, btnText, onBtnClick } = props;
     const { colClasses, cardClasses, titleClasses, btnClasses, btnIconClasses } = classes;
 
     return (
@@ -42,6 +42,7 @@ const CarouselItem = ({classes, ...props}) => {
                                 title={title}
                                 btnLabel={btnLabel}
                                 btnText={btnText}
+                                onBtnClick={onBtnClick}
                             >
                                 {
                                     // not always carousel cards are product cards
