@@ -1,9 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { updateCart } from './../redux/cart/action';
 import ReusableCard from './card';
 import Price from './price';
 
 const ProductCard = (props) => {
-    const { image, title, oldPrice, newPrice } = props.product;
+    const { product, cartProducts, updateCart } = props;
+    const { image, title, oldPrice, newPrice } = product;
 
     return (
         <ReusableCard
@@ -20,7 +23,7 @@ const ProductCard = (props) => {
             title={title}
             btnLabel="add to Cart"
             btnText="Add To Cart"
-            onBtnClick=""
+            onBtnClick={() => updateCart(product, cartProducts)}
         >
             <Price
                 classes={{
@@ -34,4 +37,10 @@ const ProductCard = (props) => {
     );
 }
 
-export default ProductCard;
+const mapStateToProps = (state) => {
+    return {
+        cartProducts: state.cartProducts
+    }
+}
+
+export default connect(mapStateToProps, { updateCart })(ProductCard);

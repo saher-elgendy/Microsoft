@@ -4,6 +4,7 @@ import images from './../../images';
 
 const Navigation = (props) => {
     const { navItems } = props;
+
     return (
         <Navbar className="flex-grow-1" expand="lg">
             <Navbar.Brand >
@@ -19,7 +20,9 @@ const Navigation = (props) => {
                                     key={index}
                                     href={item.to}
                                     className="font-size-md"
-                                >{item.title}</Nav.Link>
+                                >
+                                    {item.title}
+                                </Nav.Link>
                             );
                         })
                     }

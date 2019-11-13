@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Col } from 'react-bootstrap';
+import { connect } from 'react-redux';
 import ReusableCard from '../../reusable/card';
 import Price from '../../reusable/price';
 import CarouselContext from './carouselContext';
@@ -8,7 +9,7 @@ import CarouselContext from './carouselContext';
 
 const CarouselItem = ({classes, ...props}) => {
     const item = useContext(CarouselContext);
-    const { btnLabel, btnText, onBtnClick } = props;
+    const { btnLabel, btnText, updateCart, cartProducts } = props;
     const { colClasses, cardClasses, titleClasses, btnClasses, btnIconClasses } = classes;
 
     return (
@@ -42,7 +43,7 @@ const CarouselItem = ({classes, ...props}) => {
                                 title={title}
                                 btnLabel={btnLabel}
                                 btnText={btnText}
-                                onBtnClick={onBtnClick}
+                                onBtnClick={() =>  btnText === 'Add To Cart' ? updateCart(col, cartProducts): ''}
                             >
                                 {
                                     // not always carousel cards are product cards
@@ -65,4 +66,10 @@ const CarouselItem = ({classes, ...props}) => {
     );
 }
 
-export default CarouselItem;
+const mapStateToProps = (state) => {
+    return {
+        cartProducts: state.cartProducts
+    }
+}
+
+export default connect (mapStateToProps)(CarouselItem);

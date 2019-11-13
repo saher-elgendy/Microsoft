@@ -10,10 +10,9 @@ import CarouselItem from './../../../reusable/carousel/carouselItem';
 
 
 const BestDeals = (props) => {
-    const { productCategories, productsSlides, updateCart, cartProducts } = props;
-
-    console.log(cartProducts)
-
+    const { productCategories, productsSlides, updateCart, cartProducts, item } = props;
+    console.log(cartProducts);
+    
     return (
         <section className="section best-deals-section border-bottom">
             <Container className="py-4">
@@ -58,7 +57,7 @@ const BestDeals = (props) => {
                             }}
                             btnText="Add To Cart"
                             btnLabel="add to cart"
-                            onBtnClick={() => updateCart(cartProducts, {quantity: 1, id: 2})}
+                            updateCart={updateCart}
                         />
                     </ReusableCarousel>
                 </Row>
@@ -67,9 +66,8 @@ const BestDeals = (props) => {
     );
 }
 
-const mapStateToProps = (state) => ({
-    cartproducts: state.cartProducts
-});
+// const mapStateToProps = (state) => ({
+//     cartProducts: state.cartProducts
+// });
 
-
-export default connect(mapStateToProps, { updateCart })(BestDeals);
+export default connect(undefined, { updateCart })(BestDeals);
