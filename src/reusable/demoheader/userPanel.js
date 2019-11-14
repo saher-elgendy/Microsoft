@@ -1,18 +1,30 @@
 import React from 'react';
-import List from '../list';
+import Cart from './../cart/index';
+
 
 const UserPanel = (props) => {
-    const { userPanelItems } = props;
+    const { cartOpen, handleToggleCartShow, cartProducts } = props;
 
     return (
         <div className="user-panel">
-            <List
-                classes={{
-                    list: 'user-panel-items d-flex',
-                    listItem: 'user-panel-item ml-2 p-3'  
-                }}
-                items={userPanelItems}
-            />
+            {cartOpen ? <Cart classes={{ cart: 'cart-open' }} /> : ''}
+
+            <ul className="user-panel-icons d-flex">
+                <li className="user-panel-icon" >
+                    <i
+                        onClick={handleToggleCartShow}
+                        className="fas fa-shopping-cart"
+                        aria-hidden="true">
+                    </i>
+                    <span className="cart-products-num text-primary">{cartProducts.length}</span>
+                </li>
+                <li className="user-panel-icon">
+                    <i className="fas fa-search" aria-hidden="true"></i>
+                </li>
+                <li className="user-panel-icon">
+                    <i className="fas fa-user" aria-hidden="true"></i>
+                </li>
+            </ul>
         </div>
     );
 }
