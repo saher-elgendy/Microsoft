@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { connect } from 'react-redux';
+import { Provider } from '../cart/cartContext';
 import './index.css';
 import Navigation from './navbar';
 import UserPanel from './userPanel';
 
 
 
-
-
 const Header = (props) => {
+
+    const [cartOpen, toggleCartOpen] = useState(false);
+
+    const handleToggleCartShow = () => {
+        toggleCartOpen(!cartOpen);
+    }
 
     const navItems = [
         {
@@ -39,29 +44,25 @@ const Header = (props) => {
 
     ];
 
-    const userPanelItems = [
-        <i
-            className="fas fa-shopping-cart position-relative" aria-hidden="true"
-        >
-            <span className="cart-products-num text-primary font-weight-md">{props.cartProducts.length}</span>
-        </i>,
-        <i className="fas fa-search" aria-hidden="true"></i>,
-        <i className="fas fa-user" aria-hidden="true"></i>
-    ];
 
     return (
         <header className="header border-bottom bg-light">
-            <Container className="flex-row align-items-center justify-content-between flex-wrap ">
+            <Container className="flex-row align-items-center justify-content-between flex-wrap">
                 <Navigation navItems={navItems} />
-                <UserPanel userPanelItems={userPanelItems} />
+                <Provider  value={handleToggleCartShow}>
+                    <UserPanel
+                        cartOpen={cartOpen}
+                        handleToggleCartShow={handleToggleCartShow}
+                        cartProducts={props.cartProducts}
+                    />
+                </Provider>
             </Container>
-
         </header>
     );
 }
 
-const mapStateToProps  = (state) => ({
+const mapStateToProps = (state) => ({
     cartProducts: state.cartProducts
-});
+})
 
-export default connect (mapStateToProps) (Header);
+export default connect(mapStateToProps)(Header);
