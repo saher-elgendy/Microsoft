@@ -3,15 +3,14 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import List from '../../../reusable/list';
 import SectionTitle from '../../../reusable/sectionTitle';
-import { updateCart } from './../../../redux/cart/action';
+import { addToCart } from './../../../redux/cart/action';
 import ReusableCarousel from './../../../reusable/carousel/carousel';
 import CarouselItem from './../../../reusable/carousel/carouselItem';
 
 
 
 const BestDeals = (props) => {
-    const { productCategories, productsSlides, updateCart, cartProducts, item } = props;
-    console.log(cartProducts);
+    const { productCategories, productsSlides, addToCart } = props;
     
     return (
         <section className="section best-deals-section border-bottom">
@@ -57,7 +56,7 @@ const BestDeals = (props) => {
                             }}
                             btnText="Add To Cart"
                             btnLabel="add to cart"
-                            updateCart={updateCart}
+                            updateCart={addToCart}
                         />
                     </ReusableCarousel>
                 </Row>
@@ -70,4 +69,4 @@ const BestDeals = (props) => {
 //     cartProducts: state.cartProducts
 // });
 
-export default connect(undefined, { updateCart })(BestDeals);
+export default connect(undefined, { addToCart })(BestDeals);
