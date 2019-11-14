@@ -1,4 +1,4 @@
-import { UPDATE_CART } from './actionTypes';
+import { ADD_TO_CART, REMOVE_FROM_CART } from './actionTypes';
 
 /**
  * @param {array} cartProducts 
@@ -6,8 +6,7 @@ import { UPDATE_CART } from './actionTypes';
  * @param {number} quantity 1 by default
  */
 
-export const updateCart = (productToAdd, cartProducts, quantity) => {
-    console.log(productToAdd)
+export const addToCart = (productToAdd, cartProducts, quantity) => {
     const newCartProducts = [...cartProducts];
     //check if the product to add already exists in the cart
     const repeatedProductIndex = newCartProducts.findIndex(p => p.id === productToAdd.id);
@@ -23,14 +22,23 @@ export const updateCart = (productToAdd, cartProducts, quantity) => {
     else {
         newCartProducts.push({
             ...productToAdd,
-            quantity: 1  
+            quantity: 1
         });
     }
-
-    console.log(newCartProducts)
     //the action
     return {
-        type: UPDATE_CART,
+        type: ADD_TO_CART,
         payload: newCartProducts
     }
 }
+
+
+/**
+ * 
+ * @param {object} productToRemove 
+ */
+
+export const removeFromCart = (productToRemove) => ({
+    type: REMOVE_FROM_CART,
+    payload: productToRemove
+});
