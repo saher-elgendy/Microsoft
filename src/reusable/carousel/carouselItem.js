@@ -21,7 +21,7 @@ const CarouselItem = ({classes, ...props}) => {
                     return (
                         <Col
                             //a single carousel item columns can have equal widths or not
-                            //if columns width in a single carousel item  is not consistent, use the value
+                            //if columns widths in a single carousel item  are not consistent, use the value
                             //provided by the relevant objects, if consistent use the default values 3(xl), 4(lg), 6(md)
                             key={index}
                             xl={xl ? xl : 3}
@@ -59,7 +59,7 @@ const CarouselItem = ({classes, ...props}) => {
                                 }
                             </ReusableCard>
                         </Col>
-                    );
+                    ); 
                 })
             }
         </>
