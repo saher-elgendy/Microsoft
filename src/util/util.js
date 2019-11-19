@@ -86,3 +86,23 @@ export const sortProducts = (products, sortBy) => {
             (next - prev) : products;
     });
 }
+
+/**
+ * 
+ * @param {array} data 
+ */
+// Fisher-Yates Shuffle
+export const shuffle = (data) => {
+    var currentIndex = data.length,
+        temporaryValue, randomIndex;
+
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = data[currentIndex];
+        data[currentIndex] = data[randomIndex];
+        data[randomIndex] = temporaryValue;
+    }
+
+    return data;
+}
