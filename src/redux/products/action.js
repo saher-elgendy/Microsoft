@@ -1,4 +1,4 @@
-import { filterProducts, sortProducts } from './../../util/util';
+import { filterProducts, shuffle, sortProducts } from './../../util/util';
 import { FETCH_PRODUCTS } from './actionTypes';
 
 
@@ -11,9 +11,13 @@ import { FETCH_PRODUCTS } from './actionTypes';
 export const fetchProducts = (allProducts, filters, sortBy) => {
     let products = [...allProducts];
     
+    
     if (filters && filters.length) {
         products = filterProducts(allProducts, filters);
     }
+
+    //randomize where a certain product should appear
+    shuffle(products);
 
     if (sortBy) {
        sortProducts(products, sortBy);
