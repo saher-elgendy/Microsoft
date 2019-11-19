@@ -34,7 +34,7 @@ const BestProducts = (props) => {
                     {
                         products.map((p, index) => {
                             return (
-                                <Col key={index} className="mt-4" xl={3}>
+                                <Col key={index} className="mt-4" md={6} lg={4} xl={3}>
                                     <ProductCard product={p} />
                                 </Col>
 
