@@ -11,8 +11,9 @@ const Cart = ({ classes, ...props }) => {
 
     const totalPay = cartProducts.reduce((acc, current) => {
         //converting price string into number
-        current = Number(current.newPrice.slice(0, -1));
-        return acc + current;
+        const productPrice = Number(current.newPrice.slice(0, -1));
+        //the user has the option to buy the product by any quantity
+        return acc + productPrice * current.quantity;
     }, 0);
 
     return (
@@ -21,7 +22,7 @@ const Cart = ({ classes, ...props }) => {
                 className="cart-close-btn"
                 onClick={handleCartIconClick}
             >X</span>
-            <div className="cart-products overflow-auto h-100">
+            <div className="cart-products overflow-auto">
                 {
                     cartProducts.length ?
                         <ul>
@@ -39,7 +40,7 @@ const Cart = ({ classes, ...props }) => {
                 cartProducts.length ?
                     <div className="check-out text-center py-3">
                         <div className="total-pay text-white">
-                            <p className="font-size-md">Total: {totalPay}$</p>
+                            <p className="font-size-md">Total: {totalPay.toFixed(2)}$</p>
                         </div>
                         
                         <ReusableButton
