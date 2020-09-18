@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,aACE,eAAgB,CAChB,WACF,CAGA,YACE,eAAgB,CAChB,eACF","file":"8.f3ab6611.chunk.css","sourcesContent":[".product-box {\n  max-width: 300px;\n  margin: auto;\n}\n\n/* specs list */\n.specs-list {\n  list-style: disc;\n  margin-left: 1em;\n}\n/*# sourceMappingURL=index.css.map */"]}
