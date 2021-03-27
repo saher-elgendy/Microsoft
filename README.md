@@ -15,6 +15,7 @@ Microsoft is a E-commerce website built by React.
 * Sass
 * Redux
 * React-Redux
+* firebase
 
 
 ## Dev Dependencies
